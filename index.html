@@ -91,54 +91,148 @@
 
   <div id="spinner"><div class="loader"></div></div>
 
-  <form id="surveyForm">
-    <h2 id="formTitle">🚌 Passenger Feedback Survey</h2>
+  
+<form id="surveyForm">
+  <h2 id="formTitle">🚌 Passenger Feedback Survey</h2>
 
-    <div class="note" id="gpsNote">
-      📍 Please enable GPS when prompted. It helps us improve transport services in your area.
-    </div>
+  <div class="note" id="gpsNote">
+    📍 Please enable GPS when prompted. It helps us improve transport services in your area.
+  </div>
 
-    <label id="q1Label">1. How satisfied are you with the service?</label>
-    <select name="satisfaction" required>
-      <option value="">--Choose--</option>
-      <option value="Very Satisfied">Very Satisfied</option>
-      <option value="Satisfied">Satisfied</option>
-      <option value="Neutral">Neutral</option>
-      <option value="Unsatisfied">Unsatisfied</option>
-      <option value="Very Unsatisfied">Very Unsatisfied</option>
-    </select>
+  <label id="q1Label">1. Do you prefer a public transport route in the Al Nuaimiya area?</label>
+  <select name="q1_preferRoute" required>
+    <option value="">--Choose--</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
 
-    <label id="q2Label">2. What is the purpose of your trip?</label>
-    <input type="text" name="tripPurpose" required>
+  <label id="q2Label">2. Please select the starting location</label>
+  <select name="q2_startLocation" required>
+    <option value="">--Choose--</option>
+    <option value="Al Jurf Industrial 1">Al Jurf Industrial 1</option>
+    <option value="Al Jurf Industrial 2">Al Jurf Industrial 2</option>
+    <option value="Al Jurf 3">Al Jurf 3</option>
+    <option value="Ajman Industrial">Ajman Industrial</option>
+    <option value="Al Nuaimiya 1">Al Nuaimiya 1</option>
+    <option value="Al Nuaimiya 2">Al Nuaimiya 2</option>
+    <option value="Al Nuaimiya 3">Al Nuaimiya 3</option>
+    <option value="Al Rashidiya 1">Al Rashidiya 1</option>
+    <option value="Al Rashidiya 2">Al Rashidiya 2</option>
+    <option value="Al Rashidiya 3">Al Rashidiya 3</option>
+    <option value="Al Jurf">Al Jurf</option>
+    <option value="Al Hamidiyah">Al Hamidiyah</option>
+    <option value="Liwarah">Liwarah</option>
+    <option value="Al Bustan">Al Bustan</option>
+    <option value="Corniche">Corniche</option>
+    <option value="Sharjah">Sharjah</option>
+    <option value="Dubai">Dubai</option>
+    <option value="Umm Al Quwain">Umm Al Quwain</option>
+    <option value="Other">Other</option>
+  </select>
 
-    <label id="q3Label">3. How often do you use public transport?</label>
-    <select name="frequency" required>
-      <option value="">--Choose--</option>
-      <option value="Daily">Daily</option>
-      <option value="Weekly">Weekly</option>
-      <option value="Monthly">Monthly</option>
-      <option value="Rarely">Rarely</option>
-    </select>
+  <label id="q3Label">3. Please select your desired destination</label>
+  <select name="q3_destination" required>
+    <option value="">--Choose--</option>
+    <option value="Al Jurf Industrial 1">Al Jurf Industrial 1</option>
+    <option value="Al Jurf Industrial 2">Al Jurf Industrial 2</option>
+    <option value="Al Jurf 3">Al Jurf 3</option>
+    <option value="Ajman Industrial">Ajman Industrial</option>
+    <option value="Al Nuaimiya 1">Al Nuaimiya 1</option>
+    <option value="Al Nuaimiya 2">Al Nuaimiya 2</option>
+    <option value="Al Nuaimiya 3">Al Nuaimiya 3</option>
+    <option value="Al Rashidiya 1">Al Rashidiya 1</option>
+    <option value="Al Rashidiya 2">Al Rashidiya 2</option>
+    <option value="Al Rashidiya 3">Al Rashidiya 3</option>
+    <option value="Al Jurf">Al Jurf</option>
+    <option value="Al Hamidiyah">Al Hamidiyah</option>
+    <option value="Liwarah">Liwarah</option>
+    <option value="Al Bustan">Al Bustan</option>
+    <option value="Corniche">Corniche</option>
+    <option value="Sharjah">Sharjah</option>
+    <option value="Dubai">Dubai</option>
+    <option value="Umm Al Quwain">Umm Al Quwain</option>
+    <option value="Other">Other</option>
+  </select>
 
-    <label id="q4Label">4. Gender</label>
-    <select name="gender" required>
-      <option value="">--Choose--</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
+  <label id="q4Label">4. Residential area</label>
+  <select name="q4_residentialArea" required>
+    <option value="">--Choose--</option>
+    <option value="Al Jurf Industrial 1">Al Jurf Industrial 1</option>
+    <option value="Al Jurf Industrial 2">Al Jurf Industrial 2</option>
+    <option value="Al Jurf 3">Al Jurf 3</option>
+    <option value="Ajman Industrial">Ajman Industrial</option>
+    <option value="Al Nuaimiya 1">Al Nuaimiya 1</option>
+    <option value="Al Nuaimiya 2">Al Nuaimiya 2</option>
+    <option value="Al Nuaimiya 3">Al Nuaimiya 3</option>
+    <option value="Al Rashidiya 1">Al Rashidiya 1</option>
+    <option value="Al Rashidiya 2">Al Rashidiya 2</option>
+    <option value="Al Rashidiya 3">Al Rashidiya 3</option>
+    <option value="Al Jurf">Al Jurf</option>
+    <option value="Al Hamidiyah">Al Hamidiyah</option>
+    <option value="Liwarah">Liwarah</option>
+    <option value="Al Bustan">Al Bustan</option>
+    <option value="Corniche">Corniche</option>
+    <option value="Sharjah">Sharjah</option>
+    <option value="Dubai">Dubai</option>
+    <option value="Umm Al Quwain">Umm Al Quwain</option>
+    <option value="Other">Other</option>
+  </select>
 
-    <label id="q5Label">5. Your age group</label>
-    <select name="age" required>
-      <option value="">--Choose--</option>
-      <option value="Under 18">Under 18</option>
-      <option value="18–30">18–30</option>
-      <option value="31–45">31–45</option>
-      <option value="46–60">46–60</option>
-      <option value="Above 60">Above 60</option>
-    </select>
+  <label id="q5Label">5. How often do you currently use public transport?</label>
+  <select name="q5_frequency" required>
+    <option value="">--Choose--</option>
+    <option value="Daily">Daily</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Rarely">Rarely</option>
+  </select>
 
-    <input type="submit" class="button" value="Submit Survey">
-  </form>
+  <label id="q6Label">6. What is your preferred mode of transportation?</label>
+  <select name="q6_transportMode" required>
+    <option value="">--Choose--</option>
+    <option value="Public Bus">Public Bus</option>
+    <option value="Taxi">Taxi</option>
+    <option value="Bicycle">Bicycle</option>
+    <option value="Walking">Walking</option>
+  </select>
+
+  <label id="q7Label">7. What is the purpose of your trip?</label>
+  <select name="q7_tripPurpose" required>
+    <option value="">--Choose--</option>
+    <option value="Work">Work</option>
+    <option value="School">School</option>
+    <option value="University">University</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label id="q8Label">8. What is the preferred time to travel to your destination?</label>
+  <select name="q8_travelTime" required>
+    <option value="">--Choose--</option>
+    <option value="6 AM - 9 AM">6 AM - 9 AM</option>
+    <option value="9 AM - 12 PM">9 AM - 12 PM</option>
+    <option value="12 PM - 3 PM">12 PM - 3 PM</option>
+    <option value="3 PM - 6 PM">3 PM - 6 PM</option>
+    <option value="6 PM - 9 PM">6 PM - 9 PM</option>
+    <option value="9 PM - 12 AM">9 PM - 12 AM</option>
+  </select>
+
+  <label id="q9Label">9. Age group</label>
+  <select name="q9_ageGroup" required>
+    <option value="">--Choose--</option>
+    <option value="Under 18">Under 18</option>
+    <option value="18–30">18–30</option>
+    <option value="31–45">31–45</option>
+    <option value="46–60">46–60</option>
+    <option value="Above 60">Above 60</option>
+  </select>
+
+  <label id="q10Label">10. Occupation</label>
+  <input type="text" name="q10_occupation" required placeholder="Type your occupation">
+
+  <input type="submit" class="button" value="Submit Survey">
+</form>
+
 
   <script>
     function generateUUID() {
@@ -171,11 +265,16 @@
 
       const formData = new FormData(this);
       const data = {
-        satisfaction: formData.get("satisfaction"),
-        tripPurpose: formData.get("tripPurpose"),
-        frequency: formData.get("frequency"),
-        gender: formData.get("gender"),
-        age: formData.get("age"),
+        q1_preferRoute: formData.get("q1_preferRoute"),
+        q2_startLocation: formData.get("q2_startLocation"),
+        q3_destination: formData.get("q3_destination"),
+        q4_residentialArea: formData.get("q4_residentialArea"),
+        q5_frequency: formData.get("q5_frequency"),
+        q6_transportMode: formData.get("q6_transportMode"),
+        q7_tripPurpose: formData.get("q7_tripPurpose"),
+        q8_travelTime: formData.get("q8_travelTime"),
+        q9_ageGroup: formData.get("q9_ageGroup"),
+        q10_occupation: formData.get("q10_occupation"),
         latitude,
         longitude,
         uuid: deviceUUID
