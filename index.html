@@ -280,7 +280,7 @@
         uuid: deviceUUID
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbzDhvvYGg7AZgLYQ8y5UkvVPtqHqObkAETv6HuOEsg2Q9uMolGu2kYndOLmUKd3tno/exec", {
+      fetch("https://script.google.com/macros/s/AKfycby76pC3FDZEn_eX1YtriQJQE5K1omiMqLMVwtcjXQLraKU6h9g3UiwBVxTtUKtMIMw/exec", {
         method: "POST",
         body: JSON.stringify(data)
       })
@@ -394,3 +394,21 @@
 </script>
 </body>
 </html>
+<div class="form-group">
+  <label for="q11_gender" id="q11Label">11. Gender</label>
+  <select id="q11_gender" name="q11_gender" required>
+    <option value="">--Choose--</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="q12_paymentMethod" id="q12Label">12. What is your preferred payment method?</label>
+  <select id="q12_paymentMethod" name="q12_paymentMethod" required>
+    <option value="">--Choose--</option>
+    <option value="Cash">Cash</option>
+    <option value="Bank Card">Bank Card</option>
+  </select>
+</div>
+
