@@ -306,7 +306,7 @@
       .then(res => res.text())
       .then(response => {
         
-if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a458a-0c0a-45f6-ae11-13fa08e79922"].includes(deviceUUID)) {
+if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a458a-0c0a-45f6-ae11-13fa08e79922" ,"eef60b4c-4e9e-4bca-be3c-cdab50dab571"].includes(deviceUUID)) {
 
           alert("⚠️ You have already submitted this survey from this device.");
           return;
