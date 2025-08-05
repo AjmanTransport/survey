@@ -299,14 +299,14 @@
         uuid: deviceUUID
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbxJqEDmX6qlYgH_cuEj1VLfkt5mQUx2NW30GDCSHiRSS5U5DzrGig6fDZU7mJLk6C4/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbwG_MGAs3OtVFUKHz2aLEAQCUv_zDLjWZm6ZY8t_OnxE_7RnZ3QpeJrUJWaRr-WN-0/exec", {
         method: "POST",
         body: JSON.stringify(data)
       })
       .then(res => res.text())
       .then(response => {
         
-if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a458a-0c0a-45f6-ae11-13fa08e79922" ,"eef60b4c-4e9e-4bca-be3c-cdab50dab571" ,"775ad373-c1ed-4550-8f53-dc403cae8deb"].includes(deviceUUID)) {
+if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a458a-0c0a-45f6-ae11-13fa08e79922" ,"eef60b4c-4e9e-4bca-be3c-cdab50dab571" ,"775ad373-c1ed-4550-8f53-dc403cae8deb","a4f0cf39-9185-4b3a-9e9a-fbaf6a842e3a"].includes(deviceUUID)) {
 
           alert("⚠️ You have already submitted this survey from this device.");
           return;
