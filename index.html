@@ -99,152 +99,77 @@
     📍 Please enable GPS when prompted. It helps us improve transport services in your area.
   </div>
 
-  <label id="q1Label">1. Do you prefer a public transport route in the Al Nuaimiya area?</label>
-  <select name="q1_preferRoute" required>
+
+   <div class="question">
+        <label for="q1_residential_area" id="q1Label">1. What is your residential area?</label>
+        <input type="text" id="q1_residential_area" name="q1_residential_area" required>
+      </div>
+
+  <label id="q2Label">2. Are you satisfied with the current bus route?</label>
+  <select name="q2_satisfied_current_bus_route" required>
     <option value="">--Choose--</option>
-    <option value="Yes">Yes</option>
-    <option value="No">No</option>
+    <option value="yes">yes</option>
+    <option value="No">NO</option>
   </select>
 
-  <label id="q2Label">2. Please select the starting location</label>
-  <select name="q2_startLocation" required>
-    <option value="">--Choose--</option>
-    <option value="Al Jurf Industrial 1">Al Jurf Industrial 1</option>
-    <option value="Al Jurf Industrial 2">Al Jurf Industrial 2</option>
-    <option value="Al Jurf 3">Al Jurf 3</option>
-    <option value="Ajman Industrial">Ajman Industrial</option>
-    <option value="Al Nuaimiya 1">Al Nuaimiya 1</option>
-    <option value="Al Nuaimiya 2">Al Nuaimiya 2</option>
-    <option value="Al Nuaimiya 3">Al Nuaimiya 3</option>
-    <option value="Al Rashidiya 1">Al Rashidiya 1</option>
-    <option value="Al Rashidiya 2">Al Rashidiya 2</option>
-    <option value="Al Rashidiya 3">Al Rashidiya 3</option>
-    <option value="Al Jurf">Al Jurf</option>
-    <option value="Al Hamidiyah">Al Hamidiyah</option>
-    <option value="Liwarah">Liwarah</option>
-    <option value="Al Bustan">Al Bustan</option>
-    <option value="Corniche">Corniche</option>
-    <option value="Sharjah">Sharjah</option>
-    <option value="Dubai">Dubai</option>
-    <option value="Umm Al Quwain">Umm Al Quwain</option>
-    <option value="Other">Other</option>
-  </select>
+   <div class="question">
+        <label for="q3_modifications_to_route" id="q3Label">3. What modifications would you suggest for the route?</label>
+        <input type="text" id="q3_modifications_to_route" name="q3_modifications_to_route" required>
+      </div>
 
-  <label id="q3Label">3. Please select your desired destination</label>
-  <select name="q3_destination" required>
-    <option value="">--Choose--</option>
-    <option value="Al Jurf Industrial 1">Al Jurf Industrial 1</option>
-    <option value="Al Jurf Industrial 2">Al Jurf Industrial 2</option>
-    <option value="Al Jurf 3">Al Jurf 3</option>
-    <option value="Ajman Industrial">Ajman Industrial</option>
-    <option value="Al Nuaimiya 1">Al Nuaimiya 1</option>
-    <option value="Al Nuaimiya 2">Al Nuaimiya 2</option>
-    <option value="Al Nuaimiya 3">Al Nuaimiya 3</option>
-    <option value="Al Rashidiya 1">Al Rashidiya 1</option>
-    <option value="Al Rashidiya 2">Al Rashidiya 2</option>
-    <option value="Al Rashidiya 3">Al Rashidiya 3</option>
-    <option value="Al Jurf">Al Jurf</option>
-    <option value="Al Hamidiyah">Al Hamidiyah</option>
-    <option value="Liwarah">Liwarah</option>
-    <option value="Al Bustan">Al Bustan</option>
-    <option value="Corniche">Corniche</option>
-    <option value="Sharjah">Sharjah</option>
-    <option value="Dubai">Dubai</option>
-    <option value="Umm Al Quwain">Umm Al Quwain</option>
-    <option value="Other">Other</option>
-  </select>
-
-  <label id="q4Label">4. Residential area</label>
-  <select name="q4_residentialArea" required>
-    <option value="">--Choose--</option>
-    <option value="Al Jurf Industrial 1">Al Jurf Industrial 1</option>
-    <option value="Al Jurf Industrial 2">Al Jurf Industrial 2</option>
-    <option value="Al Jurf 3">Al Jurf 3</option>
-    <option value="Ajman Industrial">Ajman Industrial</option>
-    <option value="Al Nuaimiya 1">Al Nuaimiya 1</option>
-    <option value="Al Nuaimiya 2">Al Nuaimiya 2</option>
-    <option value="Al Nuaimiya 3">Al Nuaimiya 3</option>
-    <option value="Al Rashidiya 1">Al Rashidiya 1</option>
-    <option value="Al Rashidiya 2">Al Rashidiya 2</option>
-    <option value="Al Rashidiya 3">Al Rashidiya 3</option>
-    <option value="Al Jurf">Al Jurf</option>
-    <option value="Al Hamidiyah">Al Hamidiyah</option>
-    <option value="Liwarah">Liwarah</option>
-    <option value="Al Bustan">Al Bustan</option>
-    <option value="Corniche">Corniche</option>
-    <option value="Sharjah">Sharjah</option>
-    <option value="Dubai">Dubai</option>
-    <option value="Umm Al Quwain">Umm Al Quwain</option>
-    <option value="Other">Other</option>
-  </select>
-
-  <label id="q5Label">5. How often do you currently use public transport?</label>
-  <select name="q5_frequency" required>
-    <option value="">--Choose--</option>
-    <option value="Daily">Daily</option>
-    <option value="Weekly">Weekly</option>
-    <option value="Monthly">Monthly</option>
-    <option value="Rarely">Rarely</option>
-  </select>
-
-  <label id="q6Label">6. What is your preferred mode of transportation?</label>
-  <select name="q6_transportMode" required>
-    <option value="">--Choose--</option>
-    <option value="Public Bus">Public Bus</option>
-    <option value="Taxi">Taxi</option>
-    <option value="Bicycle">Bicycle</option>
-    <option value="Walking">Walking</option>
-  </select>
-
-  <label id="q7Label">7. What is the purpose of your trip?</label>
-  <select name="q7_tripPurpose" required>
-    <option value="">--Choose--</option>
-    <option value="Work">Work</option>
-    <option value="School">School</option>
-    <option value="University">University</option>
-    <option value="Shopping">Shopping</option>
-    <option value="Other">Other</option>
-  </select>
-
-  <label id="q8Label">8. What is the preferred time to travel to your destination?</label>
-  <select name="q8_travelTime" required>
-    <option value="">--Choose--</option>
-    <option value="6 AM - 9 AM">6 AM - 9 AM</option>
-    <option value="9 AM - 12 PM">9 AM - 12 PM</option>
-    <option value="12 PM - 3 PM">12 PM - 3 PM</option>
-    <option value="3 PM - 6 PM">3 PM - 6 PM</option>
-    <option value="6 PM - 9 PM">6 PM - 9 PM</option>
-    <option value="9 PM - 12 AM">9 PM - 12 AM</option>
-  </select>
-
-  <label id="q9Label">9. Age group</label>
-  <select name="q9_ageGroup" required>
-    <option value="">--Choose--</option>
-    <option value="Under 18">Under 18</option>
-    <option value="18–30">18–30</option>
-    <option value="31–45">31–45</option>
-    <option value="46–60">46–60</option>
-    <option value="Above 60">Above 60</option>
-  </select>
 
   <div class="question">
-        <label for="q10_occupation" id="q10Label">10. Occupation</label>
-        <input type="text" id="q10_occupation" name="q10_occupation" required>
+        <label for="q4_suggest_adding_new_bus_stop" id="q4Label">4. Do you suggest adding a new bus stop?</label>
+        <input type="text" id="q4_suggest_adding_new_bus_stop" name="q4_suggest_adding_new_bus_stop" required>
       </div>
-  <label id="q11Label">11. Gender</label>
-  <select name="q11_gender" required>
-    <option value="">--Choose--</option>
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-  </select>
+   
+      <div class="question">
+        <label for="q5_which_bus_stop_suggest_adding" id="q5Label">5. If yes, which bus stop do you suggest adding?</label>
+        <input type="text" id="q5_which_bus_stop_suggest_adding" name="q5_which_bus_stop_suggest_adding" required>
+      </div>
 
-  <label id="q12Label">12. Preferred Payment Method</label>
-  <select name="q12_paymentMethod" required>
+  <div class="question">
+        <label for="q6_satisfied_with_the_trip_schedules" id="q6Label">6. Are you satisfied with the trip schedules?</label>
+        <input type="text" id="q6_satisfied_with_the_trip_schedules" name="q6_satisfied_with_the_trip_schedules" required>
+      </div>
+
+  <div class="question">
+        <label for="q7_what_trip_times_do_you_recommend" id="q7Label">7. If no, what trip times do you recommend?</label>
+        <input type="text" id="q7_what_trip_times_do_you_recommend" name="q7_what_trip_times_do_you_recommend" required>
+      </div>
+
+  <div class="question">
+        <label for="q8_What_destination_would_you_like_to_travel_to" id="q8Label">8. What destination would you like to travel to?</label>
+        <input type="text" id="q8_What_destination_would_you_like_to_travel_to" name="q8_What_destination_would_you_like_to_travel_to" required>
+      </div>
+
+  <div class="question">
+        <label for="q9_What_is_your_preferred_boarding_stop" id="q9Label">9. What is your preferred boarding stop?</label>
+        <input type="text" id="q9_What_is_your_preferred_boarding_stop" name="q9_What_is_your_preferred_boarding_stop" required>
+      </div>
+
+  <div class="question">
+        <label for="q10_What_is_your_preferred_drop_off_stop" id="q10Label">10. What is your preferred drop-off stop?</label>
+        <input type="text" id="q10_What_is_your_preferred_drop_off_stop" name="q10_What_is_your_preferred_drop_off_stop" required>
+      </div>
+
+  
+  <label id="q11Label">11. Preferred Payment Method</label>
+  <select name="q11_paymentMethod" required>
     <option value="">--Choose--</option>
     <option value="Cash">Cash</option>
     <option value="Bank Card">Bank Card</option>
   </select>
 
+<div class="question">
+        <label for="q12_What_is_your_contact_number" id="q12Label">12. What is your contact number?</label>
+        <input type="text" id="q12_What_is_your_contact_number" name="q12_What_is_your_contact_number" required>
+      </div>
+
+<div class="question">
+        <label for="q13_Do_you_have_any_complaints_or_suggestions" id="q13Label">13. Do you have any complaints or suggestions?</label>
+        <input type="text" id="q13_Do_you_have_any_complaints_or_suggestions" name="q13_Do_you_have_any_complaints_or_suggestions" required>
+      </div>
 
 
   <input type="submit" class="button" value="Submit Survey">
@@ -282,24 +207,26 @@
 
       const formData = new FormData(this);
       const data = {
-        q1_preferRoute: formData.get("q1_preferRoute"),
-        q2_startLocation: formData.get("q2_startLocation"),
-        q3_destination: formData.get("q3_destination"),
-        q4_residentialArea: formData.get("q4_residentialArea"),
-        q5_frequency: formData.get("q5_frequency"),
-        q6_transportMode: formData.get("q6_transportMode"),
-        q7_tripPurpose: formData.get("q7_tripPurpose"),
-        q8_travelTime: formData.get("q8_travelTime"),
-        q9_ageGroup: formData.get("q9_ageGroup"),
-        q10_occupation: formData.get("q10_occupation"),
-        q11_gender: formData.get("q11_gender"),
-        q12_paymentMethod: formData.get("q12_paymentMethod"),
+        q1_residential_area: formData.get("q1_residential_area"),
+        q2_satisfied_current_bus_route: formData.get("q2_satisfied_current_bus_route"),
+        q3_modifications_to_route: formData.get("q3_modifications_to_route"),
+        q4_suggest_adding_new_bus_stop: formData.get("q4_suggest_adding_new_bus_stop"),
+        q5_which_bus_stop_suggest_adding: formData.get("q5_which_bus_stop_suggest_adding"),
+        q6_satisfied_with_the_trip_schedules: formData.get("q6_satisfied_with_the_trip_schedules"),
+        q7_what_trip_times_do_you_recommend: formData.get("q7_what_trip_times_do_you_recommend"),
+        q8_What_destination_would_you_like_to_travel_to: formData.get("q8_What_destination_would_you_like_to_travel_to"),
+        q9_What_is_your_preferred_boarding_stop: formData.get("q9_What_is_your_preferred_boarding_stop"),
+        q10_What_is_your_preferred_drop_off_stop: formData.get("q10_What_is_your_preferred_drop_off_stop"),
+        q11_paymentMethod: formData.get("q11_paymentMethod"),
+        q12_What_is_your_contact_number: formData.get("q12_What_is_your_contact_number"),
+        q13_Do_you_have_any_complaints_or_suggestions: formData.get("q13_Do_you_have_any_complaints_or_suggestions"),
+
         latitude,
         longitude,
         uuid: deviceUUID
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbzR7rrvV0Hm0QSCJMdsDsZDA5RshA1_Md8hJoNxdYCB9Yzz-2wIKNxD3I_t61N9fGg/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbzolbB-ppd_DDWW0ESF82zU0NDhhLZ--FOlZhzSjTMHEiplMNT-erQrXEe-HHgyuk4/exec", {
         method: "POST",
         body: JSON.stringify(data)
       })
@@ -342,54 +269,57 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
       en: {
         title: "🚌 Passenger Feedback Survey",
         gps: "📍 Please enable location services on your phone and allow access to your geographic location to help improve transport services.",
-        q1: "1. Do you prefer a public transport route in the Al Nuaimiya area?",
-        q2: "2. Please select the starting location",
-        q3: "3. Please select your desired destination",
-        q4: "4. Residential area",
-        q5: "5. How often do you currently use public transport?",
-        q6: "6. What is your preferred mode of transportation?",
-        q7: "7. What is the purpose of your trip?",
-        q8: "8. What is the preferred time to travel to your destination?",
-        q9: "9. Age group",
-        q10: "10. Occupation",
-        q11: "11. Gender",
-        q12: "12. Preferred Payment Method",
+        q1: "1. What is your residential area?",
+        q2: "2. Are you satisfied with the current bus route?",
+        q3: "3. What modifications would you suggest for the route?",
+        q4: "4. Do you suggest adding a new bus stop?",
+        q5: "5. If yes, which bus stop do you suggest adding?",
+        q6: "6. Are you satisfied with the trip schedules?",
+        q7: "7. If no, what trip times do you recommend?",
+        q8: "8. What destination would you like to travel to?",
+        q9: "9. What is your preferred boarding stop?",
+        q10: "10. What is your preferred drop-off stop?",
+        q11: "11. Preferred Payment Method",
+        q12: "12. What is your contact number?",
+        q13: "13. Do you have any complaints or suggestions?",
         
         
       },
       ar: {
         title: "🚌 استبيان رضا الركاب",
         gps: "📍 الرجاء تفعيل خدمة الموقع في هاتفك والسماح بالوصول إلى الموقع الجغرافي لتحسين خدمات النقل.",
-        q1: "1. هل تفضل خط نقل عام في منطقة النعيمية؟",
-        q2: "2. الرجاء اختيار منطقة الانطلاق",
-        q3: "3. الرجاء اختيار الوجهة المراد الذهاب اليها",
-        q4: "4. منطقة السكن",
-        q5: "5. كم مرة تستخدم وسائل النقل العام حالياً؟",
-        q6: "6. ما هي وسيلة التنقل التي تفضلها؟",
-        q7: "7. ما هو الغرض من الرحلة؟",
-        q8: "8. ما هو الوقت المناسب للتنقل للوجهة المراد الذهاب إليها؟",
-        q9: "9. الفئة العمرية",
-        q10: "10. المهنة",
-        q11: "11. الجنس",
-        q12: "12. طريقة الدفع المفضلة",
+        q1: " ماهي منطقة السكن؟",
+        q2: "هل انت راضي عن مسار الخط الحالي ؟",
+        q3: "ماهو التعديل المقترح على المسار ؟ ",
+        q4: "هل تقترح إضافة موقف ؟",
+        q5: "اذا كانت الاجابة بنعم ماهو الموقف المقترح اضافته ؟",
+        q6: "هل انت راضي عن أوقات الرحلات ؟",
+        q7: "اذا كانت الاجابة بلا ماهي الاوقات التي تقترحها للرحلات ؟",
+        q8: "ماهي الوجهة التي تود الذهاب اليها  ؟",
+        q9: "ماهو موقف الركوب المفضل؟",
+        q10: "ماهو موقف النزول المفضل؟",
+        q11: " ماهي طريقة الدفع المفضلة",
+        q12: "ما هو رقم التواصل؟",
+        q13: "هل لديك اي شكاوي او اقتراحات؟",
       
        
       },
       ur: {
         title: "🚌 مسافروں کی اطمینان کا سروے",
         gps: "📍 براہ کرم اپنے فون میں لوکیشن سروس کو فعال کریں اور جغرافیائی مقام تک رسائی کی اجازت دیں تاکہ نقل و حمل کی خدمات کو بہتر بنایا جا سکے۔",
-        q1: "1. کیا آپ النعیمیہ کے علاقے میں پبلک ٹرانسپورٹ کا راستہ پسند کرتے ہیں؟",
-        q2: "2. براہ کرم روانگی کا مقام منتخب کریں",
-        q3: "3. براہ کرم مطلوبہ منزل منتخب کریں",
-        q4: "4. رہائشی علاقہ",
-        q5: "5. آپ فی الحال پبلک ٹرانسپورٹ کتنی بار استعمال کرتے ہیں؟",
-        q6: "6. آپ کی پسندیدہ سفری سہولت کیا ہے؟",
-        q7: "7. آپ کے سفر کا مقصد کیا ہے؟",
-        q8: "8. اپنی منزل تک سفر کرنے کا موزوں وقت کون سا ہے؟",
-        q9: "9. عمر کا گروپ",
-        q10: "10. پیشہ",
-        q11: "11. صنف",
-        q12: "12. آپ کی ترجیحی ادائیگی کا طریقہ",
+        q1: "آپ کس علاقے میں رہتے ہیں؟",
+        q2: "کیا آپ موجودہ بس روٹ سے مطمئن ہیں؟",
+        q3: "آپ اس روٹ میں کون سی تبدیلی کی تجویز دیتے ہیں؟",
+        q4: "کیا آپ کوئی نیا بس اسٹاپ شامل کرنے کی تجویز دیتے ہیں؟",
+        q5: "اگر جواب ہاں ہے تو آپ کون سا بس اسٹاپ شامل کرنے کی تجویز دیتے ہیں؟",
+        q6: "کیا آپ سفر کے اوقات سے مطمئن ہیں؟",
+        q7: "اگر جواب نہیں ہے تو آپ سفر کے لیے کون سے اوقات تجویز کرتے ہیں؟",
+        q8: "آپ کس منزل پر جانا چاہیں گے؟",
+        q9: "آپ کا پسندیدہ سوار ہونے کا بس اسٹاپ کون سا ہے؟",
+        q10: "آپ کا پسندیدہ اترنے کا بس اسٹاپ کون سا ہے؟",
+        q11: "آپ کی پسندیدہ ادائیگی کا طریقہ کیا ہے؟",
+        q12: "آپ کا رابطہ نمبر کیا ہے؟",
+        q13: "کیا آپ کے پاس کوئی شکایات یا تجاویز ہیں؟",
        
         
       }
@@ -418,6 +348,7 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
       document.getElementById("q10Label").innerText = t.q10;
       document.getElementById("q11Label").innerText = t.q11;
       document.getElementById("q12Label").innerText = t.q12;
+      document.getElementById("q13Label").innerText = t.q13;
       document.body.classList.toggle("rtl", lang !== "en");
     }
     
