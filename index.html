@@ -93,7 +93,7 @@
 
   
 <form id="surveyForm">
-  <h2 id="formTitle">🚌 Passenger Feedback Survey</h2>
+  <h2 id="formTitle">🚌 Passenger Survey for Sheikh Ammar Street Route</h2>
 
   <div class="note" id="gpsNote">
     📍 Please enable GPS when prompted. It helps us improve transport services in your area.
@@ -105,6 +105,7 @@
         <input type="text" id="q1_residential_area" name="q1_residential_area" required>
       </div>
 
+
   <label id="q2Label">2. Are you satisfied with the current bus route?</label>
   <select name="q2_satisfied_current_bus_route" required>
     <option value="">--Choose--</option>
@@ -112,9 +113,10 @@
     <option value="No">NO</option>
   </select>
 
+
    <div class="question">
         <label for="q3_modifications_to_route" id="q3Label">3. What modifications would you suggest for the route?</label>
-        <input type="text" id="q3_modifications_to_route" name="q3_modifications_to_route" required>
+        <input type="text" id="q3_modifications_to_route" name="q3_modifications_to_route" >
       </div>
 
 
@@ -125,7 +127,7 @@
    
       <div class="question">
         <label for="q5_which_bus_stop_suggest_adding" id="q5Label">5. If yes, which bus stop do you suggest adding?</label>
-        <input type="text" id="q5_which_bus_stop_suggest_adding" name="q5_which_bus_stop_suggest_adding" required>
+        <input type="text" id="q5_which_bus_stop_suggest_adding" name="q5_which_bus_stop_suggest_adding">
       </div>
 
   <div class="question">
@@ -135,7 +137,7 @@
 
   <div class="question">
         <label for="q7_what_trip_times_do_you_recommend" id="q7Label">7. If no, what trip times do you recommend?</label>
-        <input type="text" id="q7_what_trip_times_do_you_recommend" name="q7_what_trip_times_do_you_recommend" required>
+        <input type="text" id="q7_what_trip_times_do_you_recommend" name="q7_what_trip_times_do_you_recommend">
       </div>
 
   <div class="question">
@@ -163,13 +165,26 @@
 
 <div class="question">
         <label for="q12_What_is_your_contact_number" id="q12Label">12. What is your contact number?</label>
-        <input type="text" id="q12_What_is_your_contact_number" name="q12_What_is_your_contact_number" required>
+        <input type="text" id="q12_What_is_your_contact_number" name="q12_What_is_your_contact_number">
       </div>
 
+      
 <div class="question">
         <label for="q13_Do_you_have_any_complaints_or_suggestions" id="q13Label">13. Do you have any complaints or suggestions?</label>
-        <input type="text" id="q13_Do_you_have_any_complaints_or_suggestions" name="q13_Do_you_have_any_complaints_or_suggestions" required>
+        <input type="text" id="q13_Do_you_have_any_complaints_or_suggestions" name="q13_Do_you_have_any_complaints_or_suggestions">
       </div>
+
+
+<div class="question">
+        <label for="q14_Do_you_use_more_than_one_route_to_reach_your_destination" id="q14Label">14. Do you use more than one route to reach your destination?</label>
+        <input type="text" id="q14_Do_you_use_more_than_one_route_to_reach_your_destination" name="q14_Do_you_use_more_than_one_route_to_reach_your_destination" required>
+      </div>
+
+      div class="question">
+        <label for="q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination" id="q15Label">15. Specify the names of the routes you use to reach your destination?</label>
+        <input type="text" id="q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination" name="q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination">
+      </div>
+
 
 
   <input type="submit" class="button" value="Submit Survey">
@@ -220,13 +235,16 @@
         q11_paymentMethod: formData.get("q11_paymentMethod"),
         q12_What_is_your_contact_number: formData.get("q12_What_is_your_contact_number"),
         q13_Do_you_have_any_complaints_or_suggestions: formData.get("q13_Do_you_have_any_complaints_or_suggestions"),
+        q14_Do_you_use_more_than_one_route_to_reach_your_destination: formData.get("q14_Do_you_use_more_than_one_route_to_reach_your_destination"),
+        q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination: formData.get("q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination"),
+
 
         latitude,
         longitude,
         uuid: deviceUUID
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbzolbB-ppd_DDWW0ESF82zU0NDhhLZ--FOlZhzSjTMHEiplMNT-erQrXEe-HHgyuk4/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbxYfBTK5-66IUyzUh4_6kA4DRceCHXAy4Ssexfpw981XzGht-BAFZW1ECKMw8pXTY4/exec", {
         method: "POST",
         body: JSON.stringify(data)
       })
@@ -267,7 +285,7 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
     
     const translations = {
       en: {
-        title: "🚌 Humaidiya Feeder Route Survey",
+        title: "🚌 Passenger Survey for Sheikh Ammar Street Route",
         gps: "📍 Please enable location services on your phone and allow access to your geographic location to help improve transport services.",
         q1: "1. What is your residential area?",
         q2: "2. Are you satisfied with the current bus route?",
@@ -282,11 +300,13 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
         q11: "11. Preferred Payment Method",
         q12: "12. What is your contact number?",
         q13: "13. Do you have any complaints or suggestions?",
+        q14: "Do you use more than one route to reach your destination?",
+        q15: "Specify the names of the routes you use to reach your destination?"
         
         
       },
       ar: {
-        title: "🚌 استبيان  الخط المغذي  للحميدية",
+        title: "🚌 استبيان الركاب لخط الشيخ عمار   ",
         gps: "📍 الرجاء تفعيل خدمة الموقع في هاتفك والسماح بالوصول إلى الموقع الجغرافي لتحسين خدمات النقل.",
         q1: " ماهي منطقة السكن؟",
         q2: "هل انت راضي عن مسار الخط الحالي ؟",
@@ -301,6 +321,9 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
         q11: " ماهي طريقة الدفع المفضلة",
         q12: "ما هو رقم التواصل؟",
         q13: "هل لديك اي شكاوي او اقتراحات؟",
+        q14: "هل تستخدم  اكثر من خط للوصول الي وجهتك؟",
+        q15:  "حدد اسماء الخطوط التي تستخدمها للوصول الي وجهتك ؟"
+
       
        
       },
@@ -320,8 +343,8 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
         q11: "آپ کی پسندیدہ ادائیگی کا طریقہ کیا ہے؟",
         q12: "آپ کا رابطہ نمبر کیا ہے؟",
         q13: "کیا آپ کے پاس کوئی شکایات یا تجاویز ہیں؟",
-       
-        
+        q14:"کیا آپ اپنی منزل تک پہنچنے کے لیے ایک سے زیادہ روٹس (لائنز) استعمال کرتے ہیں؟",
+        q15:"براہِ کرم اُن روٹس (لائنز) کے نام بتائیں جو آپ اپنی منزل تک پہنچنے کے لیے استعمال کرتے ہیں۔؟"
       }
     };
 
@@ -349,6 +372,9 @@ if (response === "duplicate" && !["c84793f2-5af0-4a37-9387-afb22ccb1d44", "b32a4
       document.getElementById("q11Label").innerText = t.q11;
       document.getElementById("q12Label").innerText = t.q12;
       document.getElementById("q13Label").innerText = t.q13;
+      document.getElementById("q14Label").innerText = t.q14;
+      document.getElementById("q15Label").innerText = t.q15;
+
       document.body.classList.toggle("rtl", lang !== "en");
     }
     
