@@ -592,11 +592,12 @@
 
         <div class="actions">
           <button type="submit" class="btn" id="submitBtn">Submit Survey</button>
+          <button type="button" class="btn" id="locBtn" style="background: linear-gradient(135deg, var(--ok), var(--primary2)); box-shadow: 0 14px 28px rgba(34,197,94,.20);" onclick="requestLocation(false)">Get Location (Optional)</button>
         </div>
       </form>
 
       <div class="foot">
-        <div><strong>Privacy:</strong> no photos/audio collected. Only answers + location coordinates.</div>
+        <div><strong>Privacy:</strong> no photos/audio collected. Answers are collected, and location coordinates are collected only if shared.</div>
         <div><strong>ID:</strong> <span id="uuidText">—</span></div>
       </div>
     </div>
@@ -676,22 +677,35 @@
       t.textContent = text;
     }
 
-    // Geolocation on load
-    window.onload = function () {
+    // Geolocation (optional)
+    function requestLocation(silent=false){
       setGpsStatus(false, "GPS: checking…");
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+      if (!navigator.geolocation) {
+        setGpsStatus(false, "GPS: not supported");
+        if(!silent) showToast("warn", "This browser does not support GPS/location services.");
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
           setGpsStatus(true, "GPS: ready");
-        }, function () {
-          setGpsStatus(false, "GPS: disabled");
-          showToast("warn", "Please enable GPS/location, then refresh the page before submitting the survey.");
-        }, { enableHighAccuracy: true, timeout: 12000 });
-      } else {
-        setGpsStatus(false, "GPS: not supported");
-        showToast("warn", "This browser does not support GPS/location services.");
-      }
+          if(!silent) showToast("ok", "Location captured (optional).");
+        },
+        function () {
+          latitude = "";
+          longitude = "";
+          setGpsStatus(false, "GPS: not shared");
+          if(!silent) showToast("warn", "Location is not shared. You can still submit the survey.");
+        },
+        { enableHighAccuracy: true, timeout: 12000 }
+      );
+    }
+
+    window.onload = function () {
+      // Try once on load (silent). User can still submit if denied.
+      requestLocation(true);
     };
 
     // Submit
@@ -704,10 +718,7 @@
         return;
       }
 
-      if (!latitude || !longitude) {
-        showToast("warn", "Please enable GPS/location and refresh the page before submitting.");
-        return;
-      }
+      // Location is optional: submit even if latitude/longitude are empty.
 
       document.getElementById("spinnerOverlay").style.display = "flex";
       const submitButton = document.getElementById("submitBtn");
@@ -767,7 +778,7 @@
         heroText: "Your feedback helps improve routes, schedules, and bus stops. The survey takes about 1–2 minutes.",
         brandSubtitle: "Passenger Feedback Survey",
         title: "🚌 Passenger Survey for Sheikh Ammar Street Route",
-        gps: "📍 Please enable location services on your phone and allow access to your geographic location to help improve transport services.",
+        gps: "📍 Location sharing is optional. If you allow it, your coordinates will be collected to help improve transport services.",
         req: "Required",
         q1: "1. What is your residential area?",
         q2: "2. Are you satisfied with the current bus route?",
@@ -790,7 +801,7 @@
         heroText: "ملاحظاتك تساعدنا على تحسين المسارات والأوقات ومواقف الحافلات. يستغرق الاستبيان 1–2 دقيقة.",
         brandSubtitle: "استبيان ملاحظات الركاب",
         title: "🚌 استبيان الركاب لخط الشيخ عمار",
-        gps: "📍 الرجاء تفعيل خدمة الموقع في هاتفك والسماح بالوصول إلى الموقع الجغرافي لتحسين خدمات النقل.",
+        gps: "📍 مشاركة الموقع اختيارية. إذا وافقت فسيتم جمع الإحداثيات للمساعدة في تحسين خدمات النقل.",
         req: "إلزامي",
         q1: "1. ماهي منطقة السكن؟",
         q2: "2. هل انت راضي عن مسار الخط الحالي ؟",
@@ -813,7 +824,7 @@
         heroText: "آپ کی رائے روٹس، شیڈولز اور بس اسٹاپس بہتر بنانے میں مدد دیتی ہے۔ سروے میں 1–2 منٹ لگتے ہیں۔",
         brandSubtitle: "مسافروں کی رائے کا سروے",
         title: "🚌 شیخ عمار روٹ کے لیے مسافروں کا سروے",
-        gps: "📍 براہ کرم اپنے فون میں لوکیشن سروس کو فعال کریں اور جغرافیائی مقام تک رسائی کی اجازت دیں تاکہ نقل و حمل کی خدمات کو بہتر بنایا جا سکے۔",
+        gps: "📍 لوکیشن شیئر کرنا اختیاری ہے۔ اگر آپ اجازت دیں گے تو بہتر سروس کے لیے آپ کے کوآرڈینیٹس جمع کیے جائیں گے۔",
         req: "ضروری",
         q1: "1. آپ کس علاقے میں رہتے ہیں؟",
         q2: "2. کیا آپ موجودہ بس روٹ سے مطمئن ہیں؟",
