@@ -445,150 +445,78 @@
 
     <div class="card">
       <div class="card-head">
-        <h2 id="formTitle">🚌 Passenger Survey for Sheikh Ammar Street Route</h2>
+        <h2 id="formTitle">🚌 Passenger Survey for Jurf Industerial - Sharjah Route</h2>
         <div class="sub" id="gpsNote">📍 Please enable location services on your phone and allow access to your geographic location to help improve transport services.</div>
       </div>
 
       <form id="surveyForm" autocomplete="on" novalidate>
-        <div class="grid">
-          <div class="field span-2">
-            <label for="q1_residential_area" id="q1Label">
-              1. What is your residential area?
-              <span class="req" id="req1">Required</span>
+
+          <div class="field">
+            <label for="q1Select" id="q1Label">
+              1. Would you like to travel between the Al Jurf Industrial Area in Ajman and the city of Sharjah using public transportation?
+              <span class="req" id="req2">Required</span>
             </label>
-            <input type="text" id="q1_residential_area" name="q1_residential_area" required placeholder="e.g., Al Nuaimeya, Al Jurf…">
+            <select id="q1Select" name="q1_Would_you_like_to_travel_between_the_Al_Jurf_Industrial_Area_in_Ajman_and_the_city_of_Sharjah_using_public_transportation" required>
+              <option value="">-- Choose --</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
           </div>
+
 
           <div class="field">
             <label for="q2Select" id="q2Label">
-              2. Are you satisfied with the current bus route?
+              2. Do you prefer a direct route from the Al Jurf Industrial Area in Ajman to the city of Sharjah?
               <span class="req" id="req2">Required</span>
             </label>
-            <select id="q2Select" name="q2_satisfied_current_bus_route" required>
+            <select id="q2Select" name="q2_Do_you_prefer_a_direct_route_from_the_Al_Jurf_Industrial_Area_in_Ajman_to_the_city_of_Sharjah" required>
               <option value="">-- Choose --</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
           </div>
 
-          <div class="field">
-            <label for="q3_modifications_to_route" id="q3Label">
-              3. What modifications would you suggest for the route?
-              <span class="req" id="req3" style="display:none;">Required</span>
-            </label>
-            <input type="text" id="q3_modifications_to_route" name="q3_modifications_to_route" placeholder="Optional">
-            <div class="hint" id="q3Hint">Example: change path, adjust sequence, add connection to a destination.</div>
-          </div>
 
           <div class="field">
-            <label for="q4Select" id="q4Label">
-              4. Do you suggest adding a new bus stop?
-              <span class="req" id="req4">Required</span>
+            <label for="q3Select" id="q3Label">
+              3. Which area in Sharjah would you like to go to?
+              <span class="req" id="req2">Required</span>
             </label>
-            <select id="q4Select" name="q4_suggest_adding_new_bus_stop" required>
+            <select id="q3Select" name="q3_Which_area_in_Sharjah_would_you_like_to_go_to" required>
               <option value="">-- Choose --</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="Al Rolla">Al Rolla</option>
+              <option value="Al Jubail">Al Jubail</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
+
           <div class="field">
-            <label for="q5_which_bus_stop_suggest_adding" id="q5Label">
-              5. If yes, which bus stop do you suggest adding?
+            <label for="q4_If_You_select_Other_which_area_would_you_like_to_go_to" id="q4Label">
+              4. If You select Other , which area would you like to go to?
               <span class="req" id="req5" style="display:none;">Required</span>
             </label>
-            <input type="text" id="q5_which_bus_stop_suggest_adding" name="q5_which_bus_stop_suggest_adding" placeholder="Optional">
+            <input type="text" id="q4_If_You_select_Other_which_area_would_you_like_to_go_to" name="q4_If_You_select_Other_which_area_would_you_like_to_go_to" placeholder="Optional">
           </div>
+
 
           <div class="field">
-            <label for="q6Select" id="q6Label">
-              6. Are you satisfied with the trip schedules from Al Musalla Station?
-              <span class="req" id="req6">Required</span>
+            <label for="q5_What_is_your_contact_number" id="q5Label">
+              5.What is your contact number?
+              <span class="req" id="req5" style="display:none;">Required</span>
             </label>
-            <select id="q6Select" name="q6_satisfied_with_the_trip_schedules" required>
-              <option value="">-- Choose --</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
+            <input type="text" id="q5_What_is_your_contact_number" name="q5_What_is_your_contact_number" placeholder="Optional">
           </div>
 
-          <div class="field span-2">
-            <label for="q7_what_trip_times_do_you_recommend" id="q7Label">
-              7. If your answer is No, what trip times do you suggest from Al Musalla Station?
-              <span class="req" id="req7" style="display:none;">Required</span>
-            </label>
-            <input type="text" id="q7_what_trip_times_do_you_recommend" name="q7_what_trip_times_do_you_recommend" placeholder="Optional (e.g., 6:00 AM, 7:30 PM)">
-          </div>
 
           <div class="field">
-            <label for="q8_What_destination_would_you_like_to_travel_to" id="q8Label">
-              8. What destination would you like to travel to?
-              <span class="req" id="req8">Required</span>
+            <label for="q6_Do_you_have_any_complaints_or_suggestions" id="q6Label">
+              6. Do you have any complaints or suggestions?
+              <span class="req" id="req5" style="display:none;">Required</span>
             </label>
-            <input type="text" id="q8_What_destination_would_you_like_to_travel_to" name="q8_What_destination_would_you_like_to_travel_to" required>
+            <input type="text" id="q6_Do_you_have_any_complaints_or_suggestions" name="q6_Do_you_have_any_complaints_or_suggestions" placeholder="Optional">
           </div>
 
-          <div class="field">
-            <label for="q9_What_is_your_preferred_boarding_stop" id="q9Label">
-              9. What is your preferred boarding stop?
-              <span class="req" id="req9">Required</span>
-            </label>
-            <input type="text" id="q9_What_is_your_preferred_boarding_stop" name="q9_What_is_your_preferred_boarding_stop" required>
-          </div>
-
-          <div class="field">
-            <label for="q10_What_is_your_preferred_drop_off_stop" id="q10Label">
-              10. What is your preferred drop-off stop?
-              <span class="req" id="req10">Required</span>
-            </label>
-            <input type="text" id="q10_What_is_your_preferred_drop_off_stop" name="q10_What_is_your_preferred_drop_off_stop" required>
-          </div>
-
-          <div class="field">
-            <label for="q11Select" id="q11Label">
-              11. Preferred Payment Method
-              <span class="req" id="req11">Required</span>
-            </label>
-            <select id="q11Select" name="q11_paymentMethod" required>
-              <option value="">-- Choose --</option>
-              <option value="Cash">Cash</option>
-              <option value="Bank Card">Bank Card</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="q12_What_is_your_contact_number" id="q12Label">
-              12. What is your contact number?
-              <span class="req" id="req12" style="display:none;">Required</span>
-            </label>
-            <input type="tel" id="q12_What_is_your_contact_number" name="q12_What_is_your_contact_number" inputmode="tel" placeholder="Optional">
-            <div class="hint" id="q12Hint">Optional — used only if we need to follow up.</div>
-          </div>
-
-          <div class="field span-2">
-            <label for="q13_Do_you_have_any_complaints_or_suggestions" id="q13Label">
-              13. Do you have any complaints or suggestions?
-              <span class="req" id="req13" style="display:none;">Required</span>
-            </label>
-            <input type="text" id="q13_Do_you_have_any_complaints_or_suggestions" name="q13_Do_you_have_any_complaints_or_suggestions" placeholder="Optional">
-          </div>
-
-          <div class="field">
-            <label for="q14_Do_you_use_more_than_one_route_to_reach_your_destination" id="q14Label">
-              14. Do you use more than one route to reach your destination?
-              <span class="req" id="req14">Required</span>
-            </label>
-            <input type="text" id="q14_Do_you_use_more_than_one_route_to_reach_your_destination" name="q14_Do_you_use_more_than_one_route_to_reach_your_destination" required placeholder="Yes / No">
-          </div>
-
-          <div class="field">
-            <label for="q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination" id="q15Label">
-              15. Specify the names of the routes you use to reach your destination?
-              <span class="req" id="req15" style="display:none;">Required</span>
-            </label>
-            <input type="text" id="q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination" name="q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination" placeholder="Optional">
-          </div>
-        </div>
 
         <div class="actions">
           <button type="submit" class="btn" id="submitBtn">Submit Survey</button>
@@ -726,27 +654,18 @@
 
       const formData = new FormData(this);
       const data = {
-        q1_residential_area: formData.get("q1_residential_area"),
-        q2_satisfied_current_bus_route: formData.get("q2_satisfied_current_bus_route"),
-        q3_modifications_to_route: formData.get("q3_modifications_to_route"),
-        q4_suggest_adding_new_bus_stop: formData.get("q4_suggest_adding_new_bus_stop"),
-        q5_which_bus_stop_suggest_adding: formData.get("q5_which_bus_stop_suggest_adding"),
-        q6_satisfied_with_the_trip_schedules: formData.get("q6_satisfied_with_the_trip_schedules"),
-        q7_what_trip_times_do_you_recommend: formData.get("q7_what_trip_times_do_you_recommend"),
-        q8_What_destination_would_you_like_to_travel_to: formData.get("q8_What_destination_would_you_like_to_travel_to"),
-        q9_What_is_your_preferred_boarding_stop: formData.get("q9_What_is_your_preferred_boarding_stop"),
-        q10_What_is_your_preferred_drop_off_stop: formData.get("q10_What_is_your_preferred_drop_off_stop"),
-        q11_paymentMethod: formData.get("q11_paymentMethod"),
-        q12_What_is_your_contact_number: formData.get("q12_What_is_your_contact_number"),
-        q13_Do_you_have_any_complaints_or_suggestions: formData.get("q13_Do_you_have_any_complaints_or_suggestions"),
-        q14_Do_you_use_more_than_one_route_to_reach_your_destination: formData.get("q14_Do_you_use_more_than_one_route_to_reach_your_destination"),
-        q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination: formData.get("q15_Specify_the_names_of_the_routes_you_use_to_reach_your_destination"),
+        q1_Would_you_like_to_travel_between_the_Al_Jurf_Industrial_Area_in_Ajman_and_the_city_of_Sharjah_using_public_transportation: formData.get("q1_Would_you_like_to_travel_between_the_Al_Jurf_Industrial_Area_in_Ajman_and_the_city_of_Sharjah_using_public_transportation"),
+        q2_Do_you_prefer_a_direct_route_from_the_Al_Jurf_Industrial_Area_in_Ajman_to_the_city_of_Sharjah: formData.get("q2_Do_you_prefer_a_direct_route_from_the_Al_Jurf_Industrial_Area_in_Ajman_to_the_city_of_Sharjah"),
+        q3_Which_area_in_Sharjah_would_you_like_to_go_to: formData.get("q3_Which_area_in_Sharjah_would_you_like_to_go_to"),
+        q4_If_You_select_Other_which_area_would_you_like_to_go_to: formData.get("q4_If_You_select_Other_which_area_would_you_like_to_go_to"),
+        q5_What_is_your_contact_number: formData.get("q5_What_is_your_contact_number"),
+        q6_Do_you_have_any_complaints_or_suggestions: formData.get("q6_Do_you_have_any_complaints_or_suggestions"),
         latitude,
         longitude,
         uuid: deviceUUID
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbxYfBTK5-66IUyzUh4_6kA4DRceCHXAy4Ssexfpw981XzGht-BAFZW1ECKMw8pXTY4/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbwLDmaIm51SxARphQokyhe3b-LzqlL5qTyt_vwG5-SlLjr30Uwt9HRyhwP0R5NP990/exec", {
         method: "POST",
         body: JSON.stringify(data)
       })
@@ -777,70 +696,47 @@
         heroTitle: "🚌 Passenger Survey",
         heroText: "Your feedback helps improve routes, schedules, and bus stops. The survey takes about 1–2 minutes.",
         brandSubtitle: "Passenger Feedback Survey",
-        title: "🚌 Passenger Survey for Sheikh Ammar Street Route",
+        title: "🚌 Passenger Survey for Jurf Industerial - Sharjah Route",
         gps: "📍 Location sharing is optional. If you allow it, your coordinates will be collected to help improve transport services.",
         req: "Required",
-        q1: "1. What is your residential area?",
-        q2: "2. Are you satisfied with the current bus route?",
-        q3: "3. What modifications would you suggest for the route?",
-        q4: "4. Do you suggest adding a new bus stop?",
-        q5: "5. If yes, which bus stop do you suggest adding?",
-        q6: "6. Are you satisfied with the trip schedules from Al Musalla Station?",
-        q7: "7. If your answer is No, what trip times do you suggest from Al Musalla Station?",
-        q8: "8. What destination would you like to travel to?",
-        q9: "9. What is your preferred boarding stop?",
-        q10: "10. What is your preferred drop-off stop?",
-        q11: "11. Preferred Payment Method",
-        q12: "12. What is your contact number?",
-        q13: "13. Do you have any complaints or suggestions?",
-        q14: "14. Do you use more than one route to reach your destination?",
-        q15: "15. Specify the names of the routes you use to reach your destination?"
+        q1: "1. Would you like to travel between the Al Jurf Industrial Area in Ajman and the city of Sharjah using public transportation?",
+        q2: "2. Do you prefer a direct route from the Al Jurf Industrial Area in Ajman to the city of Sharjah?",
+        q3: "3. Which area in Sharjah would you like to go to?",
+        q4: "4. If You select Other , which area would you like to go to?",
+        q5: "5. What is your contact number?",
+        q6: "6. Do you have any complaints or suggestions?",
+        
       },
       ar: {
         heroTitle: "🚌 استبيان الركاب",
         heroText: "ملاحظاتك تساعدنا على تحسين المسارات والأوقات ومواقف الحافلات. يستغرق الاستبيان 1–2 دقيقة.",
         brandSubtitle: "استبيان ملاحظات الركاب",
-        title: "🚌 استبيان الركاب لخط الشيخ عمار",
+        title: "🚌  استبيان الركاب لخط الجرف الصناعية - الشارقة ",
         gps: "📍 مشاركة الموقع اختيارية. إذا وافقت فسيتم جمع الإحداثيات للمساعدة في تحسين خدمات النقل.",
         req: "إلزامي",
-        q1: "1. ماهي منطقة السكن؟",
-        q2: "2. هل انت راضي عن مسار الخط الحالي ؟",
-        q3: "3. ماهو التعديل المقترح على المسار ؟",
-        q4: "4. هل تقترح إضافة موقف ؟",
-        q5: "5. اذا كانت الاجابة بنعم ماهو الموقف المقترح اضافته ؟",
-        q6: "6. هل انت راضي عن أوقات الرحلات من محطة المصلي؟",
-        q7: "7. اذا كانت الاجابة بلا ماهي الاوقات التي تقترحها للرحلات من محطة المصلي؟",
-        q8: "8. ماهي الوجهة التي تود الذهاب اليها ؟",
-        q9: "9. ماهو موقف الركوب المفضل؟",
-        q10: "10. ماهو موقف النزول المفضل؟",
-        q11: "11. ماهي طريقة الدفع المفضلة",
-        q12: "12. ما هو رقم التواصل؟",
-        q13: "13. هل لديك اي شكاوي او اقتراحات؟",
-        q14: "14. هل تستخدم اكثر من خط للوصول الي وجهتك؟",
-        q15: "15. حدد اسماء الخطوط التي تستخدمها للوصول الي وجهتك ؟"
+        q1: "1. هل تود التنقل بين منطقة الجرف الصناعية في عجمان ومدينة الشارقة باستخدام وسائل النقل العام؟",
+        q2: "2. هل تفضل خط مباشر من منطقة الجرف الصناعية في عجمان إلى مدينة الشارقة ؟",
+        q3: "3. إلى أي منطقة في الشارقة تود الذهاب؟ ",
+        q4: "4. في حال اختيار أخرى إلى أي منطقة تود الذهاب؟",
+        q5: "5. ما هو رقم التواصل ؟",
+        q6: "6. هل لديك أي شكاوى أو اقتراحات؟",
+        
       },
       ur: {
         heroTitle: "🚌 مسافروں کا سروے",
         heroText: "آپ کی رائے روٹس، شیڈولز اور بس اسٹاپس بہتر بنانے میں مدد دیتی ہے۔ سروے میں 1–2 منٹ لگتے ہیں۔",
         brandSubtitle: "مسافروں کی رائے کا سروے",
-        title: "🚌 شیخ عمار روٹ کے لیے مسافروں کا سروے",
+        title: "🚌 مسافروں کا سروے برائے الجرف صنعتی علاقہ – شارجہ روٹ",
         gps: "📍 لوکیشن شیئر کرنا اختیاری ہے۔ اگر آپ اجازت دیں گے تو بہتر سروس کے لیے آپ کے کوآرڈینیٹس جمع کیے جائیں گے۔",
         req: "ضروری",
-        q1: "1. آپ کس علاقے میں رہتے ہیں؟",
-        q2: "2. کیا آپ موجودہ بس روٹ سے مطمئن ہیں؟",
-        q3: "3. آپ اس روٹ میں کون سی تبدیلی کی تجویز دیتے ہیں؟",
-        q4: "4. کیا آپ کوئی نیا بس اسٹاپ شامل کرنے کی تجویز دیتے ہیں؟",
-        q5: "5. اگر جواب ہاں ہے تو آپ کون سا بس اسٹاپ شامل کرنے کی تجویز دیتے ہیں؟",
-        q6: "6. کیا آپ المصلیٰ اسٹیشن سے روانگی کے اوقات سے مطمئن ہیں؟",
-        q7: "7. اگر آپ کا جواب نہیں ہے، تو المصلیٰ اسٹیشن سے روانگی کے لیے آپ کون سے اوقات تجویز کرتے ہیں؟",
-        q8: "8. آپ کس منزل پر جانا چاہیں گے؟",
-        q9: "9. آپ کا پسندیدہ سوار ہونے کا بس اسٹاپ کون سا ہے؟",
-        q10: "10. آپ کا پسندیدہ اترنے کا بس اسٹاپ کون سا ہے؟",
-        q11: "11. آپ کی پسندیدہ ادائیگی کا طریقہ کیا ہے؟",
-        q12: "12. آپ کا رابطہ نمبر کیا ہے؟",
-        q13: "13. کیا آپ کے پاس کوئی شکایات یا تجاویز ہیں؟",
-        q14: "14. کیا آپ اپنی منزل تک پہنچنے کے لیے ایک سے زیادہ روٹس (لائنز) استعمال کرتے ہیں؟",
-        q15: "15. براہِ کرم اُن روٹس (لائنز) کے نام بتائیں جو آپ اپنی منزل تک پہنچنے کے لیے استعمال کرتے ہیں۔"
+
+        q1: "1. کیا آپ عجمان کے الجرف صنعتی علاقے اور شارجہ شہر کے درمیان عوامی نقل و حمل کے ذریعے سفر کرنا چاہیں گے؟",
+        q2: "2. کیا آپ عجمان کے الجرف صنعتی علاقے سے شارجہ شہر تک براہِ راست روٹ کو ترجیح دیتے ہیں؟",
+        q3: "3. آپ شارجہ میں کس علاقے میں جانا چاہتے ہیں؟",
+        q4: "4. اگر آپ 'دیگر' منتخب کریں تو آپ کس علاقے میں جانا چاہیں گے؟",
+        q5: "5. آپ کا رابطہ نمبر کیا ہے؟",
+        q6: "6. کیا آپ کے پاس کوئی شکایات یا تجاویز ہیں؟",
+        
       }
     };
 
@@ -863,21 +759,14 @@
       // Required badges text
       document.querySelectorAll(".req").forEach(el => el.innerText = t.req);
 
+      // Question labels
       document.getElementById("q1Label").childNodes[0].nodeValue = t.q1 + " ";
       document.getElementById("q2Label").childNodes[0].nodeValue = t.q2 + " ";
       document.getElementById("q3Label").childNodes[0].nodeValue = t.q3 + " ";
       document.getElementById("q4Label").childNodes[0].nodeValue = t.q4 + " ";
       document.getElementById("q5Label").childNodes[0].nodeValue = t.q5 + " ";
       document.getElementById("q6Label").childNodes[0].nodeValue = t.q6 + " ";
-      document.getElementById("q7Label").childNodes[0].nodeValue = t.q7 + " ";
-      document.getElementById("q8Label").childNodes[0].nodeValue = t.q8 + " ";
-      document.getElementById("q9Label").childNodes[0].nodeValue = t.q9 + " ";
-      document.getElementById("q10Label").childNodes[0].nodeValue = t.q10 + " ";
-      document.getElementById("q11Label").childNodes[0].nodeValue = t.q11 + " ";
-      document.getElementById("q12Label").childNodes[0].nodeValue = t.q12 + " ";
-      document.getElementById("q13Label").childNodes[0].nodeValue = t.q13 + " ";
-      document.getElementById("q14Label").childNodes[0].nodeValue = t.q14 + " ";
-      document.getElementById("q15Label").childNodes[0].nodeValue = t.q15 + " ";
+      
 
       // RTL only for Arabic/Urdu
       document.body.classList.toggle("rtl", lang !== "en");
