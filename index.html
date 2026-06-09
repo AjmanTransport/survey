@@ -445,7 +445,7 @@
 
     <div class="card">
       <div class="card-head">
-        <h2 id="formTitle">🚌 Passenger Survey for Jurf Industerial - Sharjah Route</h2>
+        <h2 id="formTitle">🚌 Public Transport Passenger Survey – Humaidiya Feeder Route</h2>
         <div class="sub" id="gpsNote">📍 Please enable location services on your phone and allow access to your geographic location to help improve transport services.</div>
       </div>
 
@@ -453,57 +453,53 @@
 
           <div class="field">
             <label for="q1Select" id="q1Label">
-              1. Would you like to travel between the Al Jurf Industrial Area in Ajman and the city of Sharjah using public transportation?
-              <span class="req" id="req2">Required</span>
+              1. Are you satisfied with the current bus route and stop locations?
+              <span class="req" id="req1">Required</span>
             </label>
-            <select id="q1Select" name="q1_Would_you_like_to_travel_between_the_Al_Jurf_Industrial_Area_in_Ajman_and_the_city_of_Sharjah_using_public_transportation" required>
+            <select id="q1Select" name="q1_Are_you_satisfied_with_the_current_bus_route_and_stop_locations" required>
               <option value="">-- Choose --</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
           </div>
-
 
           <div class="field">
-            <label for="q2Select" id="q2Label">
-              2. Do you prefer a direct route from the Al Jurf Industrial Area in Ajman to the city of Sharjah?
-              <span class="req" id="req2">Required</span>
+            <label for="q2_If_you_are_not_satisfied_what_changes_would_you_recommend_to_the_current_bus_stop_locations" id="q2Label">
+              2. If you are not satisfied, what changes would you recommend to the current bus stop locations?
+              <span class="req" id="req2" style="display:none;">Required</span>
             </label>
-            <select id="q2Select" name="q2_Do_you_prefer_a_direct_route_from_the_Al_Jurf_Industrial_Area_in_Ajman_to_the_city_of_Sharjah" required>
-              <option value="">-- Choose --</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
+            <input type="text" id="q2_If_you_are_not_satisfied_what_changes_would_you_recommend_to_the_current_bus_stop_locations" name="q2_If_you_are_not_satisfied_what_changes_would_you_recommend_to_the_current_bus_stop_locations" placeholder="Optional">
           </div>
 
 
+        
           <div class="field">
             <label for="q3Select" id="q3Label">
-              3. Which area in Sharjah would you like to go to?
-              <span class="req" id="req2">Required</span>
+              3. Are you satisfied with the current trip timings?
+              <span class="req" id="req3">Required</span>
             </label>
-            <select id="q3Select" name="q3_Which_area_in_Sharjah_would_you_like_to_go_to" required>
+            <select id="q3Select" name="q3_Are_you_satisfied_with_the_current_trip_timings" required>
               <option value="">-- Choose --</option>
-              <option value="Al Rolla">Al Rolla</option>
-              <option value="Al Jubail">Al Jubail</option>
-              <option value="Other">Other</option>
+              <option value="YES">YES</option>
+              <option value="NO">NO</option>
+              
             </select>
           </div>
 
 
           <div class="field">
-            <label for="q4_If_You_select_Other_which_area_would_you_like_to_go_to" id="q4Label">
-              4. If You select Other , which area would you like to go to?
-              <span class="req" id="req5" style="display:none;">Required</span>
+            <label for="q4_If_you_are_not_satisfied_what_schedule_timings_would_you_recommend" id="q4Label">
+              4. If you are not satisfied, what schedule timings would you recommend?
+              <span class="req" id="req4" style="display:none;">Required</span>
             </label>
-            <input type="text" id="q4_If_You_select_Other_which_area_would_you_like_to_go_to" name="q4_If_You_select_Other_which_area_would_you_like_to_go_to" placeholder="Optional">
+            <input type="text" id="q4_If_you_are_not_satisfied_what_schedule_timings_would_you_recommend" name="q4_If_you_are_not_satisfied_what_schedule_timings_would_you_recommend" placeholder="Optional">
           </div>
 
 
           <div class="field">
             <label for="q5_What_is_your_contact_number" id="q5Label">
               5.What is your contact number?
-              <span class="req" id="req5" style="display:none;">Required</span>
+              <span class="req" id="req6" style="display:none;">Required</span>
             </label>
             <input type="text" id="q5_What_is_your_contact_number" name="q5_What_is_your_contact_number" placeholder="Optional">
           </div>
@@ -654,10 +650,10 @@
 
       const formData = new FormData(this);
       const data = {
-        q1_Would_you_like_to_travel_between_the_Al_Jurf_Industrial_Area_in_Ajman_and_the_city_of_Sharjah_using_public_transportation: formData.get("q1_Would_you_like_to_travel_between_the_Al_Jurf_Industrial_Area_in_Ajman_and_the_city_of_Sharjah_using_public_transportation"),
-        q2_Do_you_prefer_a_direct_route_from_the_Al_Jurf_Industrial_Area_in_Ajman_to_the_city_of_Sharjah: formData.get("q2_Do_you_prefer_a_direct_route_from_the_Al_Jurf_Industrial_Area_in_Ajman_to_the_city_of_Sharjah"),
-        q3_Which_area_in_Sharjah_would_you_like_to_go_to: formData.get("q3_Which_area_in_Sharjah_would_you_like_to_go_to"),
-        q4_If_You_select_Other_which_area_would_you_like_to_go_to: formData.get("q4_If_You_select_Other_which_area_would_you_like_to_go_to"),
+        q1_Are_you_satisfied_with_the_current_bus_route_and_stop_locations: formData.get("q1_Are_you_satisfied_with_the_current_bus_route_and_stop_locations"),
+        q2_If_you_are_not_satisfied_what_changes_would_you_recommend_to_the_current_bus_stop_locations: formData.get("q2_If_you_are_not_satisfied_what_changes_would_you_recommend_to_the_current_bus_stop_locations"),
+        q3_Are_you_satisfied_with_the_current_trip_timings: formData.get("q3_Are_you_satisfied_with_the_current_trip_timings"),
+        q4_If_you_are_not_satisfied_what_schedule_timings_would_you_recommend: formData.get("q4_If_you_are_not_satisfied_what_schedule_timings_would_you_recommend"),
         q5_What_is_your_contact_number: formData.get("q5_What_is_your_contact_number"),
         q6_Do_you_have_any_complaints_or_suggestions: formData.get("q6_Do_you_have_any_complaints_or_suggestions"),
         latitude,
@@ -687,58 +683,108 @@
       });
     });
 
-    // Language switching (same translations as your original file)
+    // Language switching
     let langIndex = 0;
     const langs = ["en", "ar", "ur"];
 
     const translations = {
       en: {
+        htmlLang: "en",
         heroTitle: "🚌 Passenger Survey",
         heroText: "Your feedback helps improve routes, schedules, and bus stops. The survey takes about 1–2 minutes.",
         brandSubtitle: "Passenger Feedback Survey",
-        title: "🚌 Passenger Survey for Jurf Industerial - Sharjah Route",
+        title: "🚌 Passenger Survey – Humaidiya Feeder Route",
         gps: "📍 Location sharing is optional. If you allow it, your coordinates will be collected to help improve transport services.",
         req: "Required",
-        q1: "1. Would you like to travel between the Al Jurf Industrial Area in Ajman and the city of Sharjah using public transportation?",
-        q2: "2. Do you prefer a direct route from the Al Jurf Industrial Area in Ajman to the city of Sharjah?",
-        q3: "3. Which area in Sharjah would you like to go to?",
-        q4: "4. If You select Other , which area would you like to go to?",
+        choose: "-- Choose --",
+        yes: "Yes",
+        no: "No",
+        optional: "Optional",
+        submit: "Submit Survey",
+        getLocation: "Get Location (Optional)",
+        privacy: "Privacy:",
+        privacyText: "no photos/audio collected. Answers are collected, and location coordinates are collected only if shared.",
+        idText: "ID:",
+        q1: "1. Are you satisfied with the current bus route and stop locations?",
+        q2: "2. If you are not satisfied, what changes would you recommend to the current bus stop locations?",
+        q3: "3. Are you satisfied with the current trip timings?",
+        q4: "4. If you are not satisfied, what schedule timings would you recommend?",
         q5: "5. What is your contact number?",
-        q6: "6. Do you have any complaints or suggestions?",
-        
+        q6: "6. Do you have any complaints or suggestions?"
       },
       ar: {
+        htmlLang: "ar",
         heroTitle: "🚌 استبيان الركاب",
         heroText: "ملاحظاتك تساعدنا على تحسين المسارات والأوقات ومواقف الحافلات. يستغرق الاستبيان 1–2 دقيقة.",
         brandSubtitle: "استبيان ملاحظات الركاب",
-        title: "🚌  استبيان الركاب لخط الجرف الصناعية - الشارقة ",
+        title: "🚌 استبيان الركاب – خط الحميدية المغذي",
         gps: "📍 مشاركة الموقع اختيارية. إذا وافقت فسيتم جمع الإحداثيات للمساعدة في تحسين خدمات النقل.",
         req: "إلزامي",
-        q1: "1. هل تود التنقل بين منطقة الجرف الصناعية في عجمان ومدينة الشارقة باستخدام وسائل النقل العام؟",
-        q2: "2. هل تفضل خط مباشر من منطقة الجرف الصناعية في عجمان إلى مدينة الشارقة ؟",
-        q3: "3. إلى أي منطقة في الشارقة تود الذهاب؟ ",
-        q4: "4. في حال اختيار أخرى إلى أي منطقة تود الذهاب؟",
-        q5: "5. ما هو رقم التواصل ؟",
-        q6: "6. هل لديك أي شكاوى أو اقتراحات؟",
-        
+        choose: "-- اختر --",
+        yes: "نعم",
+        no: "لا",
+        optional: "اختياري",
+        submit: "إرسال الاستبيان",
+        getLocation: "تحديد الموقع (اختياري)",
+        privacy: "الخصوصية:",
+        privacyText: "لا يتم جمع صور أو صوت. يتم جمع الإجابات، ويتم جمع إحداثيات الموقع فقط عند مشاركتها.",
+        idText: "المعرّف:",
+        q1: "1. هل أنت راضٍ عن مسار الخط الحالي ومواقع المواقف؟",
+        q2: "2. إذا كانت الإجابة لا، ما هو التعديل المقترح على مواقع المواقف؟",
+        q3: "3. هل أنت راضٍ عن أوقات الرحلات الحالية؟",
+        q4: "4. إذا كانت الإجابة لا، ما هي الأوقات المقترحة؟",
+        q5: "5. ما هو رقم التواصل؟",
+        q6: "6. هل لديك أي شكاوى أو اقتراحات؟"
       },
       ur: {
+        htmlLang: "ur",
         heroTitle: "🚌 مسافروں کا سروے",
         heroText: "آپ کی رائے روٹس، شیڈولز اور بس اسٹاپس بہتر بنانے میں مدد دیتی ہے۔ سروے میں 1–2 منٹ لگتے ہیں۔",
         brandSubtitle: "مسافروں کی رائے کا سروے",
-        title: "🚌 مسافروں کا سروے برائے الجرف صنعتی علاقہ – شارجہ روٹ",
+        title: "🚌 مسافر سروے – حمیدیہ فیڈر روٹ",
         gps: "📍 لوکیشن شیئر کرنا اختیاری ہے۔ اگر آپ اجازت دیں گے تو بہتر سروس کے لیے آپ کے کوآرڈینیٹس جمع کیے جائیں گے۔",
         req: "ضروری",
-
-        q1: "1. کیا آپ عجمان کے الجرف صنعتی علاقے اور شارجہ شہر کے درمیان عوامی نقل و حمل کے ذریعے سفر کرنا چاہیں گے؟",
-        q2: "2. کیا آپ عجمان کے الجرف صنعتی علاقے سے شارجہ شہر تک براہِ راست روٹ کو ترجیح دیتے ہیں؟",
-        q3: "3. آپ شارجہ میں کس علاقے میں جانا چاہتے ہیں؟",
-        q4: "4. اگر آپ 'دیگر' منتخب کریں تو آپ کس علاقے میں جانا چاہیں گے؟",
+        choose: "-- منتخب کریں --",
+        yes: "ہاں",
+        no: "نہیں",
+        optional: "اختیاری",
+        submit: "سروے جمع کریں",
+        getLocation: "لوکیشن حاصل کریں (اختیاری)",
+        privacy: "رازداری:",
+        privacyText: "کوئی تصویر یا آڈیو جمع نہیں کی جاتی۔ جوابات جمع کیے جاتے ہیں، اور لوکیشن کوآرڈینیٹس صرف اجازت دینے پر جمع کیے جاتے ہیں۔",
+        idText: "آئی ڈی:",
+        q1: "1. کیا آپ موجودہ بس روٹ اور اسٹاپس کے مقامات سے مطمئن ہیں؟",
+        q2: "2. اگر آپ مطمئن نہیں ہیں، تو بس اسٹاپس کے موجودہ مقامات میں کیا تبدیلی تجویز کرتے ہیں؟",
+        q3: "3. کیا آپ موجودہ بس شیڈول کے اوقات سے مطمئن ہیں؟",
+        q4: "4. اگر آپ مطمئن نہیں ہیں، تو آپ کون سے اوقات تجویز کرتے ہیں؟",
         q5: "5. آپ کا رابطہ نمبر کیا ہے؟",
-        q6: "6. کیا آپ کے پاس کوئی شکایات یا تجاویز ہیں؟",
-        
+        q6: "6. کیا آپ کے پاس کوئی شکایات یا تجاویز ہیں؟"
       }
     };
+
+    function setText(id, value){
+      const el = document.getElementById(id);
+      if (el) el.innerText = value;
+    }
+
+    function setLabelText(labelId, value){
+      const label = document.getElementById(labelId);
+      if (!label) return;
+
+      // Preserve the required badge inside the label, but replace only the visible question text.
+      const badge = label.querySelector(".req");
+      label.textContent = value + " ";
+      if (badge) label.appendChild(badge);
+    }
+
+    function setSelectOptions(selectId, t){
+      const sel = document.getElementById(selectId);
+      if (!sel || sel.options.length < 3) return;
+
+      sel.options[0].text = t.choose;
+      sel.options[1].text = t.yes;
+      sel.options[2].text = t.no;
+    }
 
     function cycleLang() {
       langIndex = (langIndex + 1) % langs.length;
@@ -749,26 +795,41 @@
       const lang = langs[langIndex];
       const t = translations[lang];
 
-      document.getElementById("heroTitle").innerText = t.heroTitle;
-      document.getElementById("heroText").innerText = t.heroText;
-      document.getElementById("brandSubtitle").innerText = t.brandSubtitle;
+      document.documentElement.lang = t.htmlLang;
+      document.documentElement.dir = (lang === "en") ? "ltr" : "rtl";
 
-      document.getElementById("formTitle").innerText = t.title;
-      document.getElementById("gpsNote").innerText = t.gps;
+      setText("heroTitle", t.heroTitle);
+      setText("heroText", t.heroText);
+      setText("brandSubtitle", t.brandSubtitle);
+      setText("formTitle", t.title);
+      setText("gpsNote", t.gps);
+      setText("submitBtn", t.submit);
+      setText("locBtn", t.getLocation);
 
-      // Required badges text
       document.querySelectorAll(".req").forEach(el => el.innerText = t.req);
 
-      // Question labels
-      document.getElementById("q1Label").childNodes[0].nodeValue = t.q1 + " ";
-      document.getElementById("q2Label").childNodes[0].nodeValue = t.q2 + " ";
-      document.getElementById("q3Label").childNodes[0].nodeValue = t.q3 + " ";
-      document.getElementById("q4Label").childNodes[0].nodeValue = t.q4 + " ";
-      document.getElementById("q5Label").childNodes[0].nodeValue = t.q5 + " ";
-      document.getElementById("q6Label").childNodes[0].nodeValue = t.q6 + " ";
-      
+      setLabelText("q1Label", t.q1);
+      setLabelText("q2Label", t.q2);
+      setLabelText("q3Label", t.q3);
+      setLabelText("q4Label", t.q4);
+      setLabelText("q5Label", t.q5);
+      setLabelText("q6Label", t.q6);
 
-      // RTL only for Arabic/Urdu
+      setSelectOptions("q1Select", t);
+      setSelectOptions("q3Select", t);
+
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.placeholder = t.optional;
+      });
+
+      // Update footer without breaking the UUID span
+      const foot = document.querySelector(".foot");
+      if (foot) {
+        const divs = foot.querySelectorAll("div");
+        if (divs[0]) divs[0].innerHTML = "<strong>" + t.privacy + "</strong> " + t.privacyText;
+        if (divs[1]) divs[1].innerHTML = "<strong>" + t.idText + "</strong> <span id=\"uuidText\">—</span>";
+      }
+
       document.body.classList.toggle("rtl", lang !== "en");
     }
 
@@ -777,6 +838,7 @@
     if (userLang && userLang.startsWith("ar")) langIndex = 1;
     else if (userLang && userLang.startsWith("ur")) langIndex = 2;
     applyLang();
+
   </script>
 </body>
 </html>
