@@ -445,7 +445,7 @@
 
     <div class="card">
       <div class="card-head">
-        <h2 id="formTitle">🚌 Public Transport Passenger Survey – Humaidiya Feeder Route</h2>
+        <h2 id="formTitle">🚌 Public Transport Passenger Survey – Nuamyia Feeder Route</h2>
         <div class="sub" id="gpsNote">📍 Please enable location services on your phone and allow access to your geographic location to help improve transport services.</div>
       </div>
 
@@ -649,10 +649,44 @@
       requestLocation(true);
     };
 
+    // Conditional mandatory answers: Q1 No -> Q2; Q3 No -> Q4.
+    const conditionalRules = [
+      { select: "q1Select", input: "q2_If_you_are_not_satisfied_what_changes_would_you_recommend_to_the_current_bus_stop_locations", badge: "req2", message: 11 },
+      { select: "q3Select", input: "q4_If_you_are_not_satisfied_what_schedule_timings_would_you_recommend", badge: "req4", message: 12 }
+    ];
+    messages.push(
+      ["Please enter your proposed bus stop changes in question 2.", "يرجى كتابة التعديلات المقترحة على مواقع المواقف في السؤال الثاني.", "براہ کرم سوال 2 میں بس اسٹاپس کی مجوزہ تبدیلیاں درج کریں۔"],
+      ["Please enter your proposed trip timings in question 4.", "يرجى كتابة أوقات الرحلات المقترحة في السؤال الرابع.", "براہ کرم سوال 4 میں بس کے مجوزہ اوقات درج کریں۔"]
+    );
+    function syncConditionalRequirements() {
+      const t = translations[langs[langIndex]];
+      conditionalRules.forEach(rule => {
+        const input = document.getElementById(rule.input);
+        const required = document.getElementById(rule.select).value.toLowerCase() === "no";
+        input.required = required;
+        input.placeholder = required ? t.req : t.optional;
+        document.getElementById(rule.badge).style.display = required ? "" : "none";
+        input.setCustomValidity(required && !input.value.trim() ? msg(rule.message) : "");
+      });
+    }
+    conditionalRules.forEach(rule => {
+      document.getElementById(rule.select).addEventListener("change", syncConditionalRequirements);
+      document.getElementById(rule.input).addEventListener("input", syncConditionalRequirements);
+    });
+
     // Submit
     document.getElementById("surveyForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
+      syncConditionalRequirements();
+      for (const rule of conditionalRules) {
+        const input = document.getElementById(rule.input);
+        if (input.required && !input.value.trim()) {
+          showToast("warn", msg(rule.message));
+          input.focus();
+          return;
+        }
+      }
       // Quick native validation
       if (!this.checkValidity()){
         showToast("warn", msg(0));
@@ -680,7 +714,7 @@
         uuid: deviceUUID
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbwQnm-u7wSS6Er8VUjtNA7SiFKVKRoY27_AMIfIToVp74GAbVOT3RgHeqt57ubRo_M/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbxMK10hov_6fxsOe_yibQZR2nOyXFDQb4YrJYBwMzFv4e5juDUONiJkmDTsWSY-6wI/exec", {
         method: "POST",
         body: JSON.stringify(data)
       })
@@ -690,9 +724,16 @@
           showToast("warn", msg(1));
           return;
         }
+        if (response.trim() === "error: q2 required" || response.trim() === "error: q4 required") {
+          const rule = conditionalRules[response.trim() === "error: q2 required" ? 0 : 1];
+          showToast("warn", msg(rule.message));
+          document.getElementById(rule.input).focus();
+          return;
+        }
         if (response.trim() !== "Success") throw new Error(response);
         showToast("ok", msg(2));
         this.reset();
+        syncConditionalRequirements();
       })
       .catch(() => {
         showToast("err", msg(3));
@@ -862,6 +903,7 @@
       }
 
       document.body.classList.toggle("rtl", lang !== "en");
+      syncConditionalRequirements();
     }
 
     // Auto language detection
